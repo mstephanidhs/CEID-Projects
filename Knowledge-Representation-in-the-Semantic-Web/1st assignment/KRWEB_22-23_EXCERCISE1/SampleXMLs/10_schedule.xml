@@ -1,0 +1,54 @@
+<?xml version="1.0"?> 
+<Schedule> 
+        <Lesson>
+                <Title>Artificial Intelligence</Title>
+                <Lecture Classroom="BA">
+					<Day>Wednesday</Day>
+					<Time>09-11</Time>
+				</Lecture>
+				<Lecture Classroom="BA">
+					<Day>Thursday</Day>
+					<Time>09-11</Time>
+				</Lecture>
+				<Professor>Hatzilygeroudis</Professor>
+        </Lesson>
+		<Lesson>
+                <Title>Constraint Satisfaction Problems</Title>
+                <Lecture Classroom="B3">
+					<Day>Monday</Day>
+					<Time>19-21</Time>
+				</Lecture>
+        </Lesson>		
+		<Lesson>
+                <Title>Knowledge Representation in Web</Title>
+                <Lecture Classroom="P200">
+					<Day>Friday</Day>
+					<Time>15-17</Time>
+				</Lecture>
+				<Professor>Hatzilygeroudis</Professor>
+        </Lesson>
+		<Lesson>
+                <Title>Artificial Intelligence</Title>
+                <Lecture>
+					<Day>Monday</Day>
+					<Time>19-21</Time>
+				</Lecture>
+        </Lesson>
+		<Lesson>
+                <Title>AI Programming</Title>
+                <Lecture Classroom="B3">
+					<Day>Monday</Day>
+					<Time>11-13</Time>
+				</Lecture>
+				<Professor>Hatzilygeroudis</Professor>
+        </Lesson>		
+		<Lesson>
+                <Title>Introduction to Procedural Programming</Title>
+                <Lecture Classroom="P200">
+					<Day>Wednesday</Day>
+					<Time>15-17</Time>
+				</Lecture>
+				<Professor>Papadopoulos</Professor>
+        </Lesson>		
+			
+</Schedule>

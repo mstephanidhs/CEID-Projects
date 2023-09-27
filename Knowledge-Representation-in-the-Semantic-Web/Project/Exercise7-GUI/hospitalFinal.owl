@@ -1,0 +1,1112 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital"
+    xmlns:hospital="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Microbiologist">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LabTechnician"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Analgesic">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:complementOf>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Antibiotic"/>
+        </owl:complementOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pathology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#responsibleFor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isTreatedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker"/>
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalAssistant"/>
+                  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:complementOf>
+          </owl:Class>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Public">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:complementOf>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Private"/>
+        </owl:complementOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalEquipmentRepairTechnician">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LabTechnician"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dermatology">
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pathology"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#KidneyAutoimmune">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#AutoimmuneDisease"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#KidneyDisease"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Analgesic"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Antibiotic"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#CostumerServiceAgent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dentistry">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pediatrics"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Oncology"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dermatology"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#AssociateSupplyOfficer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Storage">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine"/>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >10000</owl:maxQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#canFit"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Radiologist">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LabTechnician"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Surgeon">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <hospital:Surgeon rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cardiothoracic">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </hospital:Surgeon>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#is"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalAssistant">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#AutoimmuneDisease">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cardiology">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pediatrics"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pathology"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Oncology"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dermatology"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dentistry"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#RegisteredNurse">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#AutoimmuneDisease"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cancer"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#KidneyDisease"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LungDisease"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LabTechnician">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LungCancer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cancer"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LungDisease"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Visitor">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ClinicalNurseSupervisor">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Degree"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#owns"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Antibiotic">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <hospital:Antibiotic rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#antimicrobial_agents">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </hospital:Antibiotic>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#encapsulates"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsCoordinator">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#EmergyRoomRegisteredNurse">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Oncology">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pediatrics"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pathology"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Private">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LungDisease">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Ambulance"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >6</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#posseses"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#contains"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#consistsOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#KidneyDisease">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#CertifiedNursingAssistant">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#NoICU">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#heavilyInjured"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+          <owl:Class>
+            <owl:complementOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU"/>
+          </owl:Class>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cancer">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Laboratory">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LabTechnician"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#works"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Physician">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Pediatrics">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysInNoICU">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#NoICU"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysIn"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#promotes">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasEmployee"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#treats">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDisease">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#givesBonus">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasEmployee"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDoctor">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#surgeonAt">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Surgeon"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#belongsTo">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDoctor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#associatesWith">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDegree">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Degree"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isOwnedBy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#supervises">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isOwnedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Degree"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#patientPrescribed">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#canBeTreatedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasScrubNurse">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#accommodates">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#givesLeave">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasEmployee"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#consistsOf">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#treatedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#treats"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#colleaguesWith">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysInICU">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysIn"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#posseses">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Ambulance"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#diseaseIsTreatedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Medicine"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Disease"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#helpedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Nurse"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#encapsulates">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isTreatedIn">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#fullname">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#email">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#numberOfWorkers">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#admissionDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#specialty">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Doctor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#SSN">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Patient"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#acquiredDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Degree"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isTreatedBy">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#HealthCareWorker"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#heavilyInjured">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#numberOfBeds">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#NoICU"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staffID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#numberOf">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonPositiveInteger"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Ambulance"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#phone">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#numberOfLeave">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#grade">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Degree"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#TIN">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#sharesRoomWith">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isColleaguesWith">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalAssistant"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalAssistant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#worksWith">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Staff"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysWith">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#staysIn">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#worksAtLaboratory">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Laboratory"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Radiologist"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#accommodatesPatient">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospitalized"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasEmployee">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#LogisticsTeam"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Hospital"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <hospital:Room rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room125">
+    <hospital:heavilyInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</hospital:heavilyInjured>
+    <hospital:consistsOf>
+      <hospital:Patient rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Markos_Tsigkounis">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Patient>
+    </hospital:consistsOf>
+    <hospital:accommodates>
+      <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Marios_Stefanidis">
+        <hospital:admissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2020-11-25T09:00:00</hospital:admissionDate>
+        <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >14070001038</hospital:SSN>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Hospitalized>
+    </hospital:accommodates>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Room>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2>
+              <swrl:Variable rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+            </swrl:argument2>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            </swrl:argument1>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#colleaguesWith"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+                <swrl:argument1>
+                  <swrl:Variable rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+                </swrl:argument1>
+                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#associatesWith"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#supervises"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:label>S1</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <hospital:NoICU rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#NoICU1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:NoICU>
+  <hospital:Staff rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Aggeliki_Kourou">
+    <hospital:email rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >angkourou@gmail.com</hospital:email>
+    <hospital:TIN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >789123456</hospital:TIN>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Staff>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#patientPrescribed"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#diseaseIsTreatedBy"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDisease"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:label>S3</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+  <hospital:Hospital rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#AttikoHospital">
+    <hospital:promotes>
+      <hospital:LogisticsTeam rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Maura_Polydorou">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >5</hospital:staffID>
+        <hospital:phone rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >6945777958</hospital:phone>
+        <hospital:numberOfLeave rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >10</hospital:numberOfLeave>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:LogisticsTeam>
+    </hospital:promotes>
+    <hospital:hasEmployee rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Maura_Polydorou"/>
+    <hospital:givesBonus>
+      <hospital:Doctor rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Ilias_Psinakis">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >200</hospital:staffID>
+        <hospital:specialty rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >Andrologist</hospital:specialty>
+        <hospital:treats>
+          <hospital:Visitor rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Sakis_Rouvas">
+            <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+            >236571489</hospital:SSN>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </hospital:Visitor>
+        </hospital:treats>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Doctor>
+    </hospital:givesBonus>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Hospital>
+  <hospital:MedicalAssistant rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Fotini_Aggelaki">
+    <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >16</hospital:staffID>
+    <hospital:isColleaguesWith>
+      <hospital:MedicalAssistant rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Katerina_Papadopoulou">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >33</hospital:staffID>
+        <hospital:isColleaguesWith>
+          <hospital:MedicalAssistant rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Maria_Tsavea">
+            <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >20</hospital:staffID>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </hospital:MedicalAssistant>
+        </hospital:isColleaguesWith>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:MedicalAssistant>
+    </hospital:isColleaguesWith>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:MedicalAssistant>
+  <hospital:Doctor rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Meredith_Gray">
+    <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >153</hospital:staffID>
+    <hospital:specialty rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >General Surgeon</hospital:specialty>
+    <hospital:phone rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >6945777958</hospital:phone>
+    <hospital:email rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >meredithgray@gmail.com</hospital:email>
+    <hospital:belongsTo>
+      <hospital:Clinic rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic1">
+        <hospital:numberOfWorkers rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger"
+        >200</hospital:numberOfWorkers>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Clinic>
+    </hospital:belongsTo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Doctor>
+  <hospital:Pathology rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Cytopathology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Pathology>
+  <hospital:Degree rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#EconomicsDegree">
+    <hospital:grade rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >8.9</hospital:grade>
+    <hospital:isOwnedBy>
+      <hospital:Staff rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Spiros_Vlachos">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >86</hospital:staffID>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Staff>
+    </hospital:isOwnedBy>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Degree>
+  <hospital:Hospital rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MariosHospital"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isTreatedIn"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#belongsTo"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#treatedBy"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:label>S2</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#helpedBy"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasScrubNurse"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#surgeonAt"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:label>S4</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <hospital:Antibiotic rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Augmentin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Antibiotic>
+  <hospital:Pathology rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Forensic_Pathology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Pathology>
+  <hospital:Oncology rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Radiation_Oncology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Oncology>
+  <hospital:Oncology rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#MedicalOncology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Oncology>
+  <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Alexis_Tsipras">
+    <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >745698132</hospital:SSN>
+    <hospital:staysWith>
+      <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Kiriakos_Mitsotakis">
+        <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >156234978</hospital:SSN>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Hospitalized>
+    </hospital:staysWith>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Hospitalized>
+  <hospital:Radiologist rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Elena_Paparizou">
+    <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >100</hospital:staffID>
+    <hospital:worksAtLaboratory>
+      <hospital:Laboratory rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Lab2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Laboratory>
+    </hospital:worksAtLaboratory>
+    <hospital:worksAtLaboratory>
+      <hospital:Laboratory rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Lab1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Laboratory>
+    </hospital:worksAtLaboratory>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Radiologist>
+  <hospital:Staff rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Miltos_Pasxalidis">
+    <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >102</hospital:staffID>
+    <hospital:worksWith>
+      <hospital:Staff rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Konstantinos_Argiros">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >101</hospital:staffID>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Staff>
+    </hospital:worksWith>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Staff>
+  <hospital:Room rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Room>
+  <hospital:Room rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room36">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Room>
+  <hospital:Room rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Room>
+  <hospital:Degree rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#DoctorDegree">
+    <hospital:grade rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >7.5</hospital:grade>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Degree>
+  <hospital:Hospital rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Paidon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Hospital>
+  <hospital:Nurse rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Katerina_Mitropoulou">
+    <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</hospital:staffID>
+    <hospital:email rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >katmitropoulou@gmail.com</hospital:email>
+    <hospital:TIN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >123456789</hospital:TIN>
+    <hospital:hasDegree>
+      <hospital:Degree rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#NurseDegree">
+        <hospital:grade rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >8.25</hospital:grade>
+        <hospital:acquiredDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2017-06-14T09:00:00</hospital:acquiredDate>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Degree>
+    </hospital:hasDegree>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Nurse>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#canBeTreatedBy"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#z"/>
+                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#hasDoctor"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#y"/>
+            <swrl:argument1 rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#x"/>
+            <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#isTreatedIn"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:label>S5</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <hospital:KidneyAutoimmune rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Lupus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:KidneyAutoimmune>
+  <hospital:Degree rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#BusinessAdministrationDegree">
+    <hospital:grade rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >8.6</hospital:grade>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Degree>
+  <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Kostas_Kaoukis">
+    <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+    >132465798</hospital:SSN>
+    <hospital:sharesRoomWith>
+      <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Litsa_Kritsioni">
+        <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >718293645</hospital:SSN>
+        <hospital:sharesRoomWith>
+          <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Mimi_Kollarou">
+            <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+            >796845123</hospital:SSN>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </hospital:Hospitalized>
+        </hospital:sharesRoomWith>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Hospitalized>
+    </hospital:sharesRoomWith>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Hospitalized>
+  <hospital:LogisticsTeam rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Derek_Sheperd">
+    <hospital:numberOfLeave rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >10</hospital:numberOfLeave>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:LogisticsTeam>
+  <hospital:ICU rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU1">
+    <hospital:accommodatesPatient>
+      <hospital:Hospitalized rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Dimitris_Vergnis">
+        <hospital:SSN rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >12040008895</hospital:SSN>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Hospitalized>
+    </hospital:accommodatesPatient>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:ICU>
+  <hospital:Hospital rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#KAT">
+    <hospital:hasEmployee rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Maura_Polydorou"/>
+    <hospital:hasEmployee>
+      <hospital:LogisticsTeam rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Manolis_Foteinos">
+        <hospital:staffID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >3</hospital:staffID>
+        <hospital:numberOfLeave rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >15</hospital:numberOfLeave>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:LogisticsTeam>
+    </hospital:hasEmployee>
+    <hospital:givesLeave rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Manolis_Foteinos"/>
+    <hospital:givesBonus rdf:resource="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Manolis_Foteinos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Hospital>
+  <hospital:ICU rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#ICU2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:ICU>
+  <hospital:Room rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Room2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Room>
+  <hospital:Clinic rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Clinic2">
+    <hospital:numberOfWorkers rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger"
+    >150</hospital:numberOfWorkers>
+    <hospital:hasDoctor>
+      <hospital:Doctor rdf:about="http://www.semanticweb.org/mariosstefanidis/ontologies/2022/11/hospital#Callie_Torres">
+        <hospital:specialty rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"
+        >Orthopedic</hospital:specialty>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </hospital:Doctor>
+    </hospital:hasDoctor>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </hospital:Clinic>
+</rdf:RDF>

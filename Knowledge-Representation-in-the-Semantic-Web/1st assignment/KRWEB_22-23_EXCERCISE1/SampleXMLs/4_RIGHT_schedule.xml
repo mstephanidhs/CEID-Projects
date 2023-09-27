@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+<Schedule xmlns ="http://www.somesite.com/schema/schedule"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.somesite.com/schema/schedule schedule.xsd">
+        <Event>
+                <Title>Artificial Intelligence</Title>
+                <Lecture>
+					<Day>Wednesday</Day>
+					<Time>09:00-11:30</Time>
+				</Lecture>
+				<Lecture>
+					<Day>Thursday</Day>
+					<Time>12:00-13:30</Time>
+				</Lecture>
+        </Event>
+		<Event>
+                <Title>Knowledge Representation in Web</Title>
+                <Lecture>
+					<Day>Friday</Day>
+					<Time>15:30-17:00</Time>
+				</Lecture>
+        </Event>
+</Schedule>

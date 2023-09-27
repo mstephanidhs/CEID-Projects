@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:uni="http://www.mydomain.org/uni-ns/">
+
+    <rdf:Description rdf:about="http://www.mydomain.org/uni-ns/TheIliad">
+        <uni:WasComposed rdf:resource="http://www.mydomain.org/uni-ns/Poet"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.mydomain.org/uni-ns/Poet">
+        <uni:Lived>in the 8th Century B.C.</uni:Lived>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.mydomain.org/uni-ns/Poet"> 
+        <uni:Lived>in the Ionia of Asia Minor</uni:Lived>
+    </rdf:Description>
+
+</rdf:RDF>

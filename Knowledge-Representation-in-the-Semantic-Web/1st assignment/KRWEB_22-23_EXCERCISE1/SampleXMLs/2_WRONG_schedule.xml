@@ -1,0 +1,12 @@
+<?xml version="1.0"?> 
+<Schedule xmlns ="http://www.somesite.com/schema/schedule"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.somesite.com/schema/schedule schedule.xsd">
+        <Event>
+                <Title>Artificial Intelligence</Title>
+                <Lecture>
+					<Day>Tharsday</Day>
+					<Time>09-11</Time>
+				</Lecture>
+        </Event>
+</Schedule>

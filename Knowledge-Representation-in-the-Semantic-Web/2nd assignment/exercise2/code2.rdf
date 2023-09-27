@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:a="http://www.w3.org/2001/XMLSchema#/">
+
+    <rdf:Description rdf:about="http://www.mydomain.org/uni-ns/Statement1">
+        <rdf:subject>The Computer and Informatics Department</rdf:subject>
+        <rdf:predicate>is located</rdf:predicate>
+        <rdf:object>in Rio</rdf:object>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="Google">
+        <a:says rdf:resource="http://www.mydomain.org/uni-ns/Statement1"/>
+    </rdf:Description>
+
+</rdf:RDF>
