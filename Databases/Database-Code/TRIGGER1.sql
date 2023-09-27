@@ -1,0 +1,35 @@
+DELIMITER $
+
+CREATE TRIGGER update_company
+BEFORE UPDATE ON company
+FOR EACH ROW
+BEGIN
+  SET NEW.AFM=OLD.AFM;
+  SET NEW.DOY=OLD.DOY;
+END$
+
+CREATE TRIGGER date
+BEFORE INSERT ON user
+FOR EACH ROW
+BEGIN
+  
+  DECLARE currDate DATE;
+  SET currDate = CURDATE();
+  SET  NEW.register_date = currDate;
+
+
+END$
+
+CREATE TRIGGER date1
+BEFORE INSERT ON job
+FOR EACH ROW
+BEGIN
+  
+  DECLARE currDate DATE;
+  SET currDate = CURDATE();
+  SET  NEW.announce_date = currDate;
+
+
+END$
+
+DELIMITER ;
