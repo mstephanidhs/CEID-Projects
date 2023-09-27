@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Buyer
+comment1.params=name\ email
+comment1.target=Buyer(java.lang.String,\ java.lang.String)
+comment2.params=item\ q
+comment2.target=void\ placeOrder(Item,\ int)
+comment3.params=
+comment3.target=void\ awardBonus()
+comment4.params=
+comment4.target=void\ setbuyerCategory()
+comment5.params=b
+comment5.target=void\ setBonus(int)
+comment6.params=
+comment6.target=int\ getBonus()
+comment7.params=
+comment7.target=java.lang.String\ getBuyerCategory()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

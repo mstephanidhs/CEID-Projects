@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Paper
+comment1.params=name\ price\ description\ stock\ id\ weight\ pages
+comment1.target=Paper(java.lang.String,\ double,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=w
+comment3.target=void\ setWeight(int)
+comment4.params=
+comment4.target=int\ getWeight()
+comment5.params=p
+comment5.target=void\ setPages(int)
+comment6.params=
+comment6.target=int\ getPages()
+numComments=7

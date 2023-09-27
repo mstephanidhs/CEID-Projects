@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=EShop
+comment1.params=name\ owner
+comment1.target=EShop(java.lang.String,\ Owner)
+comment10.params=
+comment10.target=void\ showCategories()
+comment11.params=
+comment11.target=void\ checkStatus()
+comment12.params=
+comment12.target=void\ showProductsInCategory()
+comment2.params=
+comment2.target=Owner\ getOwner()
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=
+comment4.target=void\ addItem()
+comment5.params=
+comment5.target=void\ getItemsById()
+comment6.params=
+comment6.target=void\ removeItem()
+comment7.params=
+comment7.target=void\ removeBuyer()
+comment8.params=
+comment8.target=void\ updateItemStock()
+comment9.params=
+comment9.target=int\ showProduct()
+numComments=13

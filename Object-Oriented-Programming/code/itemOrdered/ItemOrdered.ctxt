@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ItemOrdered
+comment1.params=item\ quantity
+comment1.target=ItemOrdered(Item,\ int)
+comment2.params=
+comment2.target=Item\ getItem()
+comment3.params=q
+comment3.target=void\ setQuantity(int)
+comment4.params=
+comment4.target=int\ getQuantity()
+numComments=5

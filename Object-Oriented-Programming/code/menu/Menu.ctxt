@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Menu
+comment1.params=
+comment1.target=int\ menu1()
+comment2.params=
+comment2.target=int\ menu2()
+comment3.params=
+comment3.target=int\ menu3()
+comment4.params=
+comment4.target=int\ menu4()
+comment5.params=
+comment5.target=int\ menu5()
+comment6.params=eshop
+comment6.target=int\ login(EShop)
+comment7.params=eshop
+comment7.target=void\ newUser(EShop)
+numComments=8
